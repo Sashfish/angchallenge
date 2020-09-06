@@ -7,6 +7,7 @@ class CreateVideogames < ActiveRecord::Migration[6.0]
       t.boolean :features_multiplatform
       t.boolean :features_online
       t.string :metadata_genres
+      t.boolean :metadata_licensed
       t.string :metadata_publishers
       t.boolean :metadata_sequel
       t.integer :metrics_reviewscore
