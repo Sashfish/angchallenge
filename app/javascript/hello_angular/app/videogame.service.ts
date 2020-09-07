@@ -10,7 +10,7 @@ export class VideogameService {
 
   constructor(private http: HttpClient) {}
 
-  getVideogames(){
-    this.http.get(this.videogameUrl).pipe(map(data => {})).subscribe(result => {});
+  getVideogames(): Observable<any>{
+    return this.http.get(this.videogameUrl);//.pipe(map(data => {})).subscribe(result => {});
   }
 }

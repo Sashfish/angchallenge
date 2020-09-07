@@ -13,12 +13,14 @@ import templateString from './app.component.html'
 export class AppComponent implements OnInit{
   name = 'Sashfish';
 
-  videogames: Videogame[];
+  private videogames: any;
 
   constructor(private videogameService: VideogameService){}
 
   getVideogames() {
-    this.videogameService.getVideogames();
+    this.videogameService.getVideogames().subscribe(data => {
+      this.videogames = data;
+    });
   }
 
   ngOnInit() {

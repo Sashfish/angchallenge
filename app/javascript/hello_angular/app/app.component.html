@@ -1,2 +1,8 @@
 <h1>Hello {{name}}</h1>
 Videogames are here
+
+<div *ngFor="let videogame of videogames">
+  <div>
+    {{videogame.title}}
+  </div>
+</div>
