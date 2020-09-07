@@ -58,6 +58,10 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    angular-rails-templates (1.1.0)
+      railties (>= 4.2, < 7)
+      sprockets (>= 3.0, < 5)
+      tilt
     bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
@@ -161,6 +165,7 @@ GEM
     sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
+    tilt (2.0.10)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -190,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -201,6 +207,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data

@@ -10,8 +10,7 @@ export class VideogameService {
 
   constructor(private http: HttpClient) {}
 
-  getVideogames(): Observable<Videogame[]> {
-    return this.http.get(this.videogameUrl)
-    .map((response: Response) => <Videogame[]>response.json())
+  getVideogames(){
+    this.http.get(this.videogameUrl).pipe(map(data => {})).subscribe(result => {});
   }
 }

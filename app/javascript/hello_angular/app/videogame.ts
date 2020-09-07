@@ -35,6 +35,6 @@ export class Videogame {
     public length_mainstory_leisure?: number,
     public length_mainstory_median?: number,
     public length_mainstory_polled?: number,
-    public length_mainstory_rushed?: number,
+    public length_mainstory_rushed?: number
   ){}
 }

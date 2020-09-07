@@ -1,24 +1,8 @@
 const { environment } = require('@rails/webpacker')
 const typescript =  require('./loaders/typescript')
+const html = require('./loaders/html')
 
-environment.loaders.append("html",
-  { test: /\.html$/,
-    use:
-     [{ loader: "html-loader",
-        options:
-         { minimize: true,
-           removeAttributeQuotes: false,
-           caseSensitive: true, 
-           customAttrSurround: [
-            [/#/, /(?:)/],
-            [/\*/, /(?:)/],
-            [/\[?\(?/, /(?:)/]
-           ],
-           customAttrAssign: [/\)?\]?=/]
-          }
-      }]
-   }
-)
 
 environment.loaders.prepend('typescript', typescript)
+environment.loaders.prepend('html', html)
 module.exports = environment
