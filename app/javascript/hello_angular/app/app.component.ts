@@ -4,11 +4,12 @@ import { timer } from "rxjs";
 import { Videogame } from "./videogame.ts";
 import { VideogameService } from "./videogame.service";
 
-import templateString from './app.component.html'
+import templateString from './app.component.html';
 
 @Component({
   selector: 'hello-angular',
   template: templateString,
+  styles: ['table, th, td {border: 1px solid black;}']
 })
 export class AppComponent implements OnInit{
   name = 'Sashfish';
@@ -24,8 +25,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    let timerr = timer(0, 5000);
-    timerr.subscribe(() => this.getVideogames());
-
+    this.getVideogames();
   }
 }
