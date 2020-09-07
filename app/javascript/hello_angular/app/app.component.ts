@@ -26,5 +26,6 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     let timerr = timer(0, 5000);
     timerr.subscribe(() => this.getVideogames());
+
   }
 }
