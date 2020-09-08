@@ -1,4 +1,13 @@
 <h1>Hello {{name}}</h1>
+<h1>Add new game</h1>
+<form (ngSubmit)="createVideogame(videogame)" #postForm='ngForm'>
+  <div class ='form-group'>
+    <label for='videogame-title'>
+      <h3>Title</h3>
+    </label>
+    <input type='text' class='form-control' id='title' name='title' #title='ngModel'[(ngModel)]='videogame.title'>
+  </div>
+</form>
 Videogames are here
 <section>
   <table>

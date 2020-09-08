@@ -13,4 +13,10 @@ export class VideogameService {
   getVideogames(): Observable<any>{
     return this.http.get(this.videogameUrl);//.pipe(map(data => {})).subscribe(result => {});
   }
+
+  createVideogame(): Observable<Videogame>{
+    let headers = new Headers({'Content-Type':'application/json'});
+    let options = new RequestOptions({headers: headers});
+    return this.http.post(this.videogameUrl, JSON.stingify(videogame), options).map((res: Response) => res.json());
+  }
 }

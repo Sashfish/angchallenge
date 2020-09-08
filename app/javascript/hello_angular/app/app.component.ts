@@ -13,6 +13,8 @@ import templateString from './app.component.html';
 })
 export class AppComponent implements OnInit{
   name = 'Sashfish';
+  videogame = new Videogame;
+  submitted: boolean = false;
 
   private videogames: any;
 
@@ -21,6 +23,14 @@ export class AppComponent implements OnInit{
   getVideogames() {
     this.videogameService.getVideogames().subscribe(data => {
       this.videogames = data;
+    });
+  }
+
+  createVideogame(videogame: Videogame) {
+    this.submitted = true;
+    this.videogameService.createVideogame(videogame).subscribe(data => {return true}, error => {
+      console.log("Error creating videogame");
+      return Observable.throw(error);
     });
   }
 

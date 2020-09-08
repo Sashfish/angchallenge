@@ -4,7 +4,13 @@ class Api::V1::VideogamesController < Api::V1::BaseController
   end
 
   def create
-    respond_with :api, :v1, Videogame.create(item_params)
+    #respond_with :api, :v1, Videogame.create(item_params)
+    @videogame = Videogame.new(item_params)
+    if @videogame.save
+      render json: @videogame, status: :created, location: @videogame
+    else
+      render json: @videogame.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
