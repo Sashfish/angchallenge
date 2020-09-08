@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { timer } from "rxjs";
 import { Videogame } from "./videogame.ts";
 import { VideogameService } from "./videogame.service";
 
@@ -13,8 +12,8 @@ import templateString from './app.component.html';
 })
 export class AppComponent implements OnInit{
   name = 'Sashfish';
-  videogame = new Videogame;
-  submitted: boolean = false;
+  //videogame = new Videogame;
+  //submitted: boolean = false;
 
   private videogames: any;
 
@@ -26,13 +25,13 @@ export class AppComponent implements OnInit{
     });
   }
 
-  createVideogame(videogame: Videogame) {
-    this.submitted = true;
-    this.videogameService.createVideogame(videogame).subscribe(data => {return true}, error => {
-      console.log("Error creating videogame");
-      return Observable.throw(error);
-    });
-  }
+//  createVideogame(videogame: Videogame) {
+//    this.submitted = true;
+//    this.videogameService.createVideogame(videogame).subscribe(data => {return true}, error => {
+//      console.log("Error creating videogame");
+//      return Observable.throw(error);
+//    });
+//  }
 
   ngOnInit() {
     this.getVideogames();
